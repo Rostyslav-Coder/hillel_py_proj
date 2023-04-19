@@ -15,26 +15,29 @@ def players_repr(players: list[dict]) -> None:
 
 
 def players_add(players: list[dict], player: dict) -> list[dict]:
-    """Function adds a new player to the team by name"""
-    return players.append(player)
+    """Function adds a new player to the team"""
+    players.append(player)
+    return players
 
 
 def players_del(players: list[dict], name: str) -> list[dict]:
-    """The function removes a player from the team"""
+    """The function removes a player from the team by name"""
     for player in players:
         if player["name"] == name:
-            return players.remove(player)
+            players.remove(player)
+            return players
 
     return players
 
 
 def players_find(players: list[dict], field: str, value: Any) -> list[dict]:
     """The function finds a player in a team"""
+    result = []
     for player in players:
         if player[field] == value:
-            return player
+            result.append(player)
 
-    return []
+    return result
 
 
 def players_get_by_name(players: list[dict], name: str) -> dict | None:
@@ -58,10 +61,19 @@ def main():
     optns = ["repr", "add", "del", "find", "get"]
 
     def add_dict():
-        name = input("What`s player name: ").title().strip()
-        age = int(input("What`s player age: "))
-        number = int(input("What`s player number: "))
-        return {"name": name, "age": age, "number": number}
+        while True:
+            name = input("What`s name: ").title().strip()
+            if name.isalpha():
+                break
+        while True:
+            age = input("What`s age: ").strip()
+            if age.isdigit():
+                break
+        while True:
+            number = input("What`s number: ").strip()
+            if number.isdigit():
+                break
+        return {"name": name, "age": int(age), "number": int(number)}
 
     def add_name():
         name = input("What`s name: ").title().strip()
@@ -83,22 +95,23 @@ def main():
         if usr_inp == "repr":
             players_repr(my_team)
 
-        if usr_inp == "add":
+        elif usr_inp == "add":
             players_add(my_team, add_dict())
 
-        if usr_inp == "del":
+        elif usr_inp == "del":
             players_del(my_team, add_name())
 
-        if usr_inp == "find":
+        elif usr_inp == "find":
             field, value = add_field_value()
             result = players_find(my_team, field, value)
-            print(
-                f'name: {result["name"]}, '
-                f'age: {result["age"]}, '
-                f'number: {result["number"]}'
-            )
+            for player in result:
+                print(
+                    f'name: {player["name"]}, '
+                    f'age: {player["age"]}, '
+                    f'number: {player["number"]}'
+                )
 
-        if usr_inp == "get":
+        elif usr_inp == "get":
             rslt = players_get_by_name(my_team, add_name())
             print(
                 f'name: {rslt["name"]}, '
