@@ -27,7 +27,7 @@ def players_del(players: list[dict], name: str) -> list[dict]:
             players.remove(player)
             return players
 
-    return players
+    return players  # Если player не найден
 
 
 def players_find(players: list[dict], field: str, value: Any) -> list[dict]:
@@ -38,7 +38,7 @@ def players_find(players: list[dict], field: str, value: Any) -> list[dict]:
             result.append(player)
             return result
 
-    return result
+    return result  # Если player не найден
 
 
 def players_get_by_name(players: list[dict], name: str) -> dict | None:
