@@ -36,6 +36,7 @@ def players_find(players: list[dict], field: str, value: Any) -> list[dict]:
     for player in players:
         if player[field] == value:
             result.append(player)
+            return result
 
     return result
 
