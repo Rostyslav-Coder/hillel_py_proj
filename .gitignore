@@ -1,4 +1,6 @@
+.mypy_cache
+.vscode/
+my_folder/
 lesson_3/rockyou.txt
 lesson_3/results.txt
-my_folder/
-.mypy_cache
+lesson_7/example_module.py
