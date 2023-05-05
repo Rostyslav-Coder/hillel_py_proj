@@ -9,7 +9,7 @@ def add(price: Price) -> Price:
     amount = float(input("What`s amount to add: ").strip())
     currency = input("What`s currency: ").upper().strip()
     new_price = Price(amount=amount, currency=currency)
-    price += new_price  # type: ignore
+    price = price + new_price  # type: ignore
     print(f"NEW PRICE IS: {price}")
 
     return price
@@ -21,7 +21,7 @@ def sub(price: Price) -> Price:
     amount = float(input("What`s amount for subtraction: ").strip())
     currency = input("What`s currency: ").upper().strip()
     new_price: Price = Price(amount=amount, currency=currency)
-    price -= new_price  # type: ignore
+    price = price - new_price  # type: ignore
     print(f"NEW PRICE IS: {price}")
 
     return price
@@ -31,7 +31,7 @@ def mul(price: Price) -> Price:
     """This is the multiply function"""
 
     value = float(input("What is the multiplier to multiply: ").strip())
-    price *= value  # type: ignore
+    price = price * value  # type: ignore
     print(f"NEW PRICE IS: {price}")
 
     return price
@@ -41,7 +41,7 @@ def div(price: Price) -> Price:
     """This is the divide function"""
 
     value = float(input("What is the divisor to divide: ").strip())
-    price /= value  # type: ignore
+    price = price / value  # type: ignore
     print(f"NEW PRICE IS: {price}")
 
     return price
