@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 pympler = "*"
 mypy = "*"
+requests = "*"
 
 [dev-packages]
 isort = "*"
