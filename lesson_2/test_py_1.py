@@ -1,6 +1,5 @@
-"""
-    This is modul with 4 task  HW 8 Rostyslav Putnikov
-"""
+"""This is modul with 4 task  HW 8 Rostyslav Putnikov"""
+
 # Важно: не использовать циклы для реализации основной логики.
 # Нужно использовать рекурсию.
 # Цикл можно использовать только в 4 задании для нахождения суммы чисел.
@@ -12,7 +11,7 @@
 
 import random
 
-my_list = []
+my_list: list = []
 
 
 def int_unique_gen(some_list, length):
@@ -36,7 +35,7 @@ print(my_list)
 # print(f"Длина списка: {len(my_list)}")
 print()
 
-my_dict = dict()
+my_dict: dict = dict()
 
 
 def add_ten(some_list, num):
@@ -59,6 +58,6 @@ add_ten(my_list, 0)
 print(
     f"Порядковый номер числа, с которого начинается"
     f"последовательность из 10 чисел, сумма которых минимальна: "
-    f"{min(my_dict, key=my_dict.get) + 1}"
+    f"{min(my_dict, key=my_dict.get) + 1}"  # type: ignore
 )
-print(f"Индекс этого числа: {min(my_dict, key=my_dict.get)}")
+print(f"Индекс этого числа: {min(my_dict, key=my_dict.get)}")  # type: ignore
