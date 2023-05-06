@@ -4,7 +4,7 @@
 второго "генератора", во втором я не уверен.
 """
 
-from pympler.asizeof import asizeof
+from pympler.asizeof import asizeof  # type: ignore
 
 
 def main():

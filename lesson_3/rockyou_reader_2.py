@@ -5,7 +5,7 @@
 с помощью цикла "for".
 """
 
-from pympler.asizeof import asizeof
+from pympler.asizeof import asizeof  # type: ignore
 
 
 def main():
