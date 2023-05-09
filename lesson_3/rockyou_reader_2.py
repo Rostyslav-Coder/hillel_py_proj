@@ -16,7 +16,7 @@ def main():
     the "new_file_writer" function for writing to the file. Then calls the
     "print_file_info" function to display information about the created file.
     """
-    word: str = input("What`s word: ").strip().lower()
+    word = input("What`s word: ").strip().lower()
     for line in find_in_file(word):
         new_file_writer(line)
     print_file_info()

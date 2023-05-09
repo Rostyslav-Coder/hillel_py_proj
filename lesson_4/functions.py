@@ -115,9 +115,9 @@ def main():
         elif usr_inp == "get":
             rslt = players_get_by_name(my_team, add_name())
             print(
-                f'name: {rslt["name"]}, '
-                f'age: {rslt["age"]}, '
-                f'number: {rslt["number"]}'
+                f'name: {rslt["name"]}, '  # type: ignore
+                f'age: {rslt["age"]}, '  # type: ignore
+                f'number: {rslt["number"]}'  # type: ignore
             )
 
 
