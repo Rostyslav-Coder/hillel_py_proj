@@ -1,8 +1,8 @@
 """This is Multi-processing module of Home Work 7"""
 
+import multiprocessing
 import os
 import threading
-import multiprocessing
 from time import perf_counter, sleep
 
 import requests
@@ -12,8 +12,10 @@ import requests
 def encrypt_file(path: str):
     """This is encrypt file module"""
     start = perf_counter()
-    print(f"Processing text file '{path}' in process {os.getpid()} "
-          f"in thread {threading.current_thread().name}")
+    print(
+        f"Processing text file '{path}' in process {os.getpid()} "
+        f"in thread {threading.current_thread().name}"
+    )
     # Simulate heavy computation by sleeping for a while
     sleep(2)
     _ = [i for i in range(100_000_000)]
@@ -54,8 +56,8 @@ def main():
         download_counter = perf_counter() - start
         total = perf_counter() - start
         print(
-        f"Time taken for:\nCPU-bound task: {encryption_counter},\n"
-        f"I/O-bound task: {download_counter},\nTotal: {total} seconds"
+            f"Time taken for:\nCPU-bound task: {encryption_counter},\n"
+            f"I/O-bound task: {download_counter},\nTotal: {total} seconds"
         )
     except Exception as error:
         print(f"Error occurred: {error}")
