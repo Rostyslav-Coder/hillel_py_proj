@@ -2,12 +2,12 @@
 
 
 EXCHANGE_RATE = {
-    'EUR -> UAH': 40.313848,
-    'EUR -> USD': 1.0909,
-    'UAH -> EUR': 0.024805,
-    'UAH -> USD': 0.02708,
-    'USD -> EUR': 0.9158,
-    'USD -> UAH': 36.92
+    "EUR -> UAH": 40.313848,
+    "EUR -> USD": 1.0909,
+    "UAH -> EUR": 0.024805,
+    "UAH -> USD": 0.02708,
+    "USD -> EUR": 0.9158,
+    "USD -> UAH": 36.92,
 }
 
 
@@ -18,12 +18,10 @@ class Price:
         self.amount = amount
         self.currency = currency
 
-
     def _convert_to(self, other) -> float:
         rate = EXCHANGE_RATE[f"{self.currency} -> {other.currency}"]
 
         return rate
-
 
     def _double_convert(self, other):
         rate_1 = EXCHANGE_RATE[f"USD -> {self.currency}"]
@@ -31,7 +29,6 @@ class Price:
         rate_3 = EXCHANGE_RATE[f"{self.currency} -> USD"]
 
         return rate_1, rate_2, rate_3
-
 
     def __add__(self, other):
         if self.currency == other.currency:
